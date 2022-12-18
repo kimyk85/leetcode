@@ -10,6 +10,6 @@ class Solution:
                 j[s] += 1
 
         total = 0
-        for i, v in j.items():
+        for v in j.values():
             total = total + v
         return total
