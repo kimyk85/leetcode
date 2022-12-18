@@ -1,15 +1,8 @@
 class Solution:
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
-        j = dict()
-
-        for v in jewels:
-            j[v] = 0
-
-        for s in stones:
-            if s in j.keys():
-                j[s] += 1
-
+        s = dict(Counter(stones))
         total = 0
-        for v in j.values():
-            total = total + v
+        for j in jewels:
+            if j in s.keys():
+                total = total + s[j]
         return total
